@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Exceptions;
+namespace ValeSaude\LaravelValueObjects\Exceptions;
 
 use InvalidArgumentException;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Casts;
+namespace ValeSaude\LaravelValueObjects\Casts;
 
-use ValeSaude\ValueObjects\Contracts\StringableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Contracts\StringableValueObjectInterface;
 
 /**
  * @template-extends AbstractValueObjectCast<StringableValueObjectInterface>

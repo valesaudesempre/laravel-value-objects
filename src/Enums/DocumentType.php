@@ -1,9 +1,9 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Enums;
+namespace ValeSaude\LaravelValueObjects\Enums;
 
 use Spatie\Enum\Laravel\Enum;
-use ValeSaude\ValueObjects\Concerns\ConvertsEnumValueToSlugTrait;
+use ValeSaude\LaravelValueObjects\Concerns\ConvertsEnumValueToSlugTrait;
 
 /**
  * @method static self CPF()

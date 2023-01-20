@@ -1,10 +1,10 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Casts;
+namespace ValeSaude\LaravelValueObjects\Casts;
 
 use JsonException;
-use ValeSaude\ValueObjects\Contracts\JsonSerializableValueObjectInterface;
-use ValeSaude\ValueObjects\Utils\JSON;
+use ValeSaude\LaravelValueObjects\Contracts\JsonSerializableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Utils\JSON;
 
 /**
  * @template-extends AbstractValueObjectCast<JsonSerializableValueObjectInterface>

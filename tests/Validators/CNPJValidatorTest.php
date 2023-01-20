@@ -1,6 +1,6 @@
 <?php
 
-use ValeSaude\ValueObjects\Validators\CNPJValidator;
+use ValeSaude\LaravelValueObjects\Validators\CNPJValidator;
 
 beforeEach(fn () => $this->sut = new CNPJValidator());
 

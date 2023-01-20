@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Formatters\Contracts;
+namespace ValeSaude\LaravelValueObjects\Formatters\Contracts;
 
 interface FormattableInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Casts\StringableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\StringableValueObjectInterface;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
-use ValeSaude\ValueObjects\Validators\ZipCodeValidator;
+use ValeSaude\LaravelValueObjects\Casts\StringableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\StringableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Validators\ZipCodeValidator;
 
 class ZipCode extends AbstractValueObject implements StringableValueObjectInterface, Castable, FormattableInterface
 {

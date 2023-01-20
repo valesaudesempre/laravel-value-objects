@@ -1,17 +1,17 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Casts\DocumentCast;
-use ValeSaude\ValueObjects\Enums\DocumentType;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
-use ValeSaude\ValueObjects\Validators\CNPJValidator;
-use ValeSaude\ValueObjects\Validators\Contracts\ValidatorInterface;
-use ValeSaude\ValueObjects\Validators\CPFValidator;
+use ValeSaude\LaravelValueObjects\Casts\DocumentCast;
+use ValeSaude\LaravelValueObjects\Enums\DocumentType;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Validators\CNPJValidator;
+use ValeSaude\LaravelValueObjects\Validators\Contracts\ValidatorInterface;
+use ValeSaude\LaravelValueObjects\Validators\CPFValidator;
 
 class Document extends AbstractValueObject implements Castable, FormattableInterface
 {

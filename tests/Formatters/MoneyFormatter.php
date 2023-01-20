@@ -1,7 +1,7 @@
 <?php
 
-use ValeSaude\ValueObjects\Formatters\MoneyFormatter;
-use ValeSaude\ValueObjects\Money;
+use ValeSaude\LaravelValueObjects\Formatters\MoneyFormatter;
+use ValeSaude\LaravelValueObjects\Money;
 
 beforeEach(fn () => $this->sut = new MoneyFormatter());
 

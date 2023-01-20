@@ -1,11 +1,11 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Casts\StringableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\StringableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Casts\StringableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\StringableValueObjectInterface;
 
 class Bank extends AbstractValueObject implements StringableValueObjectInterface, Castable
 {

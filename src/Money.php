@@ -1,13 +1,13 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Database\Eloquent\Castable;
-use ValeSaude\ValueObjects\Casts\MoneyCast;
-use ValeSaude\ValueObjects\Concerns\HasFormatterTrait;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
-use ValeSaude\ValueObjects\Formatters\MoneyFormatter;
+use ValeSaude\LaravelValueObjects\Casts\MoneyCast;
+use ValeSaude\LaravelValueObjects\Concerns\HasFormatterTrait;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Formatters\MoneyFormatter;
 
 class Money extends AbstractValueObject implements Castable, FormattableInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-use ValeSaude\ValueObjects\Validators\CPFValidator;
+use ValeSaude\LaravelValueObjects\Validators\CPFValidator;
 
 beforeEach(fn () => $this->sut = new CPFValidator());
 

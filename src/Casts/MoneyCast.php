@@ -1,9 +1,9 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Casts;
+namespace ValeSaude\LaravelValueObjects\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use ValeSaude\ValueObjects\Money;
+use ValeSaude\LaravelValueObjects\Money;
 
 class MoneyCast implements CastsAttributes
 {

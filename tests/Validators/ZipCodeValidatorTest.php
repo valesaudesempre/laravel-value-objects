@@ -1,6 +1,6 @@
 <?php
 
-use ValeSaude\ValueObjects\Validators\ZipCodeValidator;
+use ValeSaude\LaravelValueObjects\Validators\ZipCodeValidator;
 
 beforeEach(fn () => $this->sut = new ZipCodeValidator());
 

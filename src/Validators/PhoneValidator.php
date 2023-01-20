@@ -1,8 +1,8 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Validators;
+namespace ValeSaude\LaravelValueObjects\Validators;
 
-use ValeSaude\ValueObjects\Validators\Contracts\ValidatorInterface;
+use ValeSaude\LaravelValueObjects\Validators\Contracts\ValidatorInterface;
 
 class PhoneValidator implements ValidatorInterface
 {

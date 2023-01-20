@@ -1,6 +1,6 @@
 <?php
 
-use ValeSaude\ValueObjects\JsonObject;
+use ValeSaude\LaravelValueObjects\JsonObject;
 
 test('get correctly handles both existing and non existing keys', function () {
     // Given

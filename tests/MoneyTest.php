@@ -1,8 +1,8 @@
 <?php
 
-use ValeSaude\ValueObjects\Casts\MoneyCast;
-use ValeSaude\ValueObjects\Formatters\MoneyFormatter;
-use ValeSaude\ValueObjects\Money;
+use ValeSaude\LaravelValueObjects\Casts\MoneyCast;
+use ValeSaude\LaravelValueObjects\Formatters\MoneyFormatter;
+use ValeSaude\LaravelValueObjects\Money;
 use function PHPUnit\Framework\once;
 
 test('getCents returns the value in cents', function () {

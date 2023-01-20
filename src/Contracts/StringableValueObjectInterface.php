@@ -1,8 +1,8 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Contracts;
+namespace ValeSaude\LaravelValueObjects\Contracts;
 
-use ValeSaude\ValueObjects\AbstractValueObject;
+use ValeSaude\LaravelValueObjects\AbstractValueObject;
 
 /**
  * @mixin AbstractValueObject

@@ -1,12 +1,12 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Contracts\Support\Arrayable;
-use ValeSaude\ValueObjects\Casts\JsonSerializableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\JsonSerializableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Casts\JsonSerializableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\JsonSerializableValueObjectInterface;
 
 class Address extends AbstractValueObject implements Arrayable, Castable, JsonSerializableValueObjectInterface
 {

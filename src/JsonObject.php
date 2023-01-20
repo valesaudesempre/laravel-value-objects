@@ -1,13 +1,13 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Contracts\Support\Arrayable;
-use ValeSaude\ValueObjects\Casts\JsonSerializableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\JsonSerializableValueObjectInterface;
-use ValeSaude\ValueObjects\Utils\JSON;
+use ValeSaude\LaravelValueObjects\Casts\JsonSerializableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\JsonSerializableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Utils\JSON;
 
 class JsonObject extends AbstractValueObject implements Arrayable, JsonSerializableValueObjectInterface, Castable
 {

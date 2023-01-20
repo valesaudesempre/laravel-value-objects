@@ -1,6 +1,6 @@
 <?php
 
-use ValeSaude\ValueObjects\Validators\PhoneValidator;
+use ValeSaude\LaravelValueObjects\Validators\PhoneValidator;
 
 beforeEach(fn () => $this->sut = new PhoneValidator());
 

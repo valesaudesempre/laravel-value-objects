@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Casts;
+namespace ValeSaude\LaravelValueObjects\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 

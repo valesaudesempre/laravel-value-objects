@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Validators\Contracts;
+namespace ValeSaude\LaravelValueObjects\Validators\Contracts;
 
 interface ValidatorInterface
 {

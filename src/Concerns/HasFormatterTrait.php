@@ -1,10 +1,10 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Concerns;
+namespace ValeSaude\LaravelValueObjects\Concerns;
 
 use Illuminate\Container\Container;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormatterInterface;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormatterInterface;
 
 /**
  * @mixin FormattableInterface

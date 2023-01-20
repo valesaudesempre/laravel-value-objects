@@ -1,12 +1,12 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Casts\StringableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\StringableValueObjectInterface;
-use ValeSaude\ValueObjects\Validators\PhoneValidator;
+use ValeSaude\LaravelValueObjects\Casts\StringableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\StringableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Validators\PhoneValidator;
 
 class Phone extends AbstractValueObject implements StringableValueObjectInterface, Castable
 {

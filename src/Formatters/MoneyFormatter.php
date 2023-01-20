@@ -1,12 +1,12 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Formatters;
+namespace ValeSaude\LaravelValueObjects\Formatters;
 
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
-use ValeSaude\ValueObjects\Formatters\Contracts\FormatterInterface;
-use ValeSaude\ValueObjects\Money;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormatterInterface;
+use ValeSaude\LaravelValueObjects\Money;
 
 class MoneyFormatter implements FormatterInterface
 {

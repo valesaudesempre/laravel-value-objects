@@ -1,11 +1,11 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Casts;
+namespace ValeSaude\LaravelValueObjects\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use InvalidArgumentException;
-use ValeSaude\ValueObjects\Document;
-use ValeSaude\ValueObjects\Enums\DocumentType;
+use ValeSaude\LaravelValueObjects\Document;
+use ValeSaude\LaravelValueObjects\Enums\DocumentType;
 
 class DocumentCast implements CastsAttributes
 {

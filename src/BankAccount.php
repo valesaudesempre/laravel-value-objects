@@ -1,13 +1,13 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Contracts\Support\Arrayable;
-use ValeSaude\ValueObjects\Casts\JsonSerializableValueObjectCast;
-use ValeSaude\ValueObjects\Contracts\JsonSerializableValueObjectInterface;
-use ValeSaude\ValueObjects\Enums\BankAccountType;
+use ValeSaude\LaravelValueObjects\Casts\JsonSerializableValueObjectCast;
+use ValeSaude\LaravelValueObjects\Contracts\JsonSerializableValueObjectInterface;
+use ValeSaude\LaravelValueObjects\Enums\BankAccountType;
 
 class BankAccount extends AbstractValueObject implements Arrayable, Castable, JsonSerializableValueObjectInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Contracts;
+namespace ValeSaude\LaravelValueObjects\Contracts;
 
 use JsonSerializable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects;
+namespace ValeSaude\LaravelValueObjects;
 
 abstract class AbstractValueObject
 {

@@ -4,12 +4,12 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "ValeSaude\\ValueObjects\\": "src"
+            "ValeSaude\\LaravelValueObjects\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ValeSaude\\ValueObjects\\Tests\\": "tests"
+            "ValeSaude\\LaravelValueObjects\\Tests\\": "tests"
         }
     },
     "authors": [

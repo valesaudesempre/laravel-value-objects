@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Utils;
+namespace ValeSaude\LaravelValueObjects\Utils;
 
 use JsonException;
 use JsonSerializable;

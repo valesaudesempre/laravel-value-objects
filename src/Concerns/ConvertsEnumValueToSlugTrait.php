@@ -1,6 +1,6 @@
 <?php
 
-namespace ValeSaude\ValueObjects\Concerns;
+namespace ValeSaude\LaravelValueObjects\Concerns;
 
 use Illuminate\Support\Str;
 use Spatie\Enum\Laravel\Enum;
