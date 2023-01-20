@@ -1,6 +1,6 @@
 {
-    "name": "valesaude/value-objects",
-    "description": "A set of reusable ValueObjects.",
+    "name": "valesaude/laravel-value-objects",
+    "description": "A set of reusable ValueObjects (and complementary classes) for Laravel applications.",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -23,6 +23,7 @@
         "ext-json": "*",
         "illuminate/contracts": "^8.83",
         "illuminate/support": "^8.83",
+        "illuminate/container": "^8.83",
         "spatie/laravel-enum": "^3.0"
     },
     "require-dev": {
