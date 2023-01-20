@@ -6,9 +6,10 @@ use Illuminate\Contracts\Database\Eloquent\Castable;
 use InvalidArgumentException;
 use ValeSaude\ValueObjects\Casts\StringableValueObjectCast;
 use ValeSaude\ValueObjects\Contracts\StringableValueObjectInterface;
+use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
 use ValeSaude\ValueObjects\Validators\ZipCodeValidator;
 
-class ZipCode extends AbstractValueObject implements StringableValueObjectInterface, Castable
+class ZipCode extends AbstractValueObject implements StringableValueObjectInterface, Castable, FormattableInterface
 {
     private string $zipCode;
 
@@ -26,6 +27,11 @@ class ZipCode extends AbstractValueObject implements StringableValueObjectInterf
     public function __toString(): string
     {
         return $this->zipCode;
+    }
+
+    public function format(): string
+    {
+        return sprintf('%s%s%s%s%s-%s%s%s', ...str_split($this->zipCode));
     }
 
     /**

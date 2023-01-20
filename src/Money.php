@@ -2,11 +2,17 @@
 
 namespace ValeSaude\ValueObjects;
 
+use Illuminate\Container\Container;
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use ValeSaude\ValueObjects\Casts\MoneyCast;
+use ValeSaude\ValueObjects\Concerns\HasFormatterTrait;
+use ValeSaude\ValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\ValueObjects\Formatters\MoneyFormatter;
 
-class Money extends AbstractValueObject implements Castable
+class Money extends AbstractValueObject implements Castable, FormattableInterface
 {
+    use HasFormatterTrait;
+
     private int $cents;
 
     public function __construct(int $cents)
@@ -24,14 +30,45 @@ class Money extends AbstractValueObject implements Castable
         return round($this->cents / 100, 2);
     }
 
+    public function sum(int $number): self
+    {
+        return new self($this->cents + $number);
+    }
+
+    public function subtract(int $number): self
+    {
+        return new self($this->cents - $number);
+    }
+
     /**
      * @param int|float $multiplier
-     *
-     * @return self
      */
     public function multiply($multiplier): self
     {
         return new self((int) round($this->cents * $multiplier));
+    }
+
+    /**
+     * @param int|float $divisor
+     *
+     * @return self
+     */
+    public function divide($divisor): self
+    {
+        return new self((int) round($this->cents / $divisor));
+    }
+
+    /**
+     * @param int|float $percentage
+     */
+    public function percentage($percentage): self
+    {
+        return $this->multiply($percentage / 100);
+    }
+
+    public function getFormatterClass(): string
+    {
+        return MoneyFormatter::class;
     }
 
     /**
@@ -45,5 +82,17 @@ class Money extends AbstractValueObject implements Castable
     public static function zero(): self
     {
         return new self(0);
+    }
+
+    public static function fromFloat(float $value): self
+    {
+        return new self((int) round($value * 100));
+    }
+
+    public static function fromFormattedString(string $formattedString): self
+    {
+        return Container::getInstance()
+            ->get(MoneyFormatter::class)
+            ->fromFormattedString($formattedString);
     }
 }
