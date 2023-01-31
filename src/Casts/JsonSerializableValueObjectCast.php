@@ -12,26 +12,34 @@ use ValeSaude\LaravelValueObjects\Utils\JSON;
 class JsonSerializableValueObjectCast extends AbstractValueObjectCast
 {
     /**
-     * @param string               $value
+     * @param string|null          $value
      * @param array<string, mixed> $attributes
      *
      * @throws JsonException
      */
-    public function get($model, string $key, $value, array $attributes): JsonSerializableValueObjectInterface
+    public function get($model, string $key, $value, array $attributes): ?JsonSerializableValueObjectInterface
     {
         $class = $this->valueObjectClass;
+
+        if (null === $value) {
+            return null;
+        }
 
         return $class::fromArray(JSON::decode($value));
     }
 
     /**
-     * @param JsonSerializableValueObjectInterface $value
-     * @param array<string, mixed>                 $attributes
+     * @param JsonSerializableValueObjectInterface|null $value
+     * @param array<string, mixed>                      $attributes
      *
      * @throws JsonException
      */
-    public function set($model, string $key, $value, array $attributes): string
+    public function set($model, string $key, $value, array $attributes): ?string
     {
+        if (null === $value) {
+            return null;
+        }
+
         return JSON::encode($value);
     }
 }
