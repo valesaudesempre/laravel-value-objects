@@ -35,6 +35,9 @@
         "phpstan/phpstan-phpunit": "^1.2",
         "fakerphp/faker": "^1.20"
     },
+    "suggest": {
+        "ext/json": "Needed to use JSON related VOs."
+    },
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true,
