@@ -5,6 +5,7 @@ namespace ValeSaude\LaravelValueObjects;
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Arr;
 use ValeSaude\LaravelValueObjects\Casts\JsonSerializableValueObjectCast;
 use ValeSaude\LaravelValueObjects\Contracts\JsonSerializableValueObjectInterface;
 use ValeSaude\LaravelValueObjects\Utils\JSON;
@@ -68,6 +69,11 @@ class JsonObject extends AbstractValueObject implements Arrayable, JsonSerializa
     public function merge(array $content, bool $recursively = true): self
     {
         return new self(array_merge($this->content, $content));
+    }
+
+    public function only(array $keys): self
+    {
+        return new self(Arr::only($this->content, $keys));
     }
 
     public function isEmpty(): bool
