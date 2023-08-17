@@ -9,7 +9,7 @@ use ValeSaude\LaravelValueObjects\FullName;
 class FullNameCast implements CastsAttributes
 {
     /**
-     * @param string               $value
+     * @param string|null $value
      * @param array<string, mixed> $attributes
      *
      */

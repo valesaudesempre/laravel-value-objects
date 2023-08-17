@@ -71,6 +71,9 @@ class JsonObject extends AbstractValueObject implements Arrayable, JsonSerializa
         return new self(array_merge($this->content, $content));
     }
 
+    /**
+     * @param array<int, string> $keys
+     */
     public function only(array $keys): self
     {
         return new self(Arr::only($this->content, $keys));
