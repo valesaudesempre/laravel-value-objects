@@ -28,6 +28,16 @@ class Phone extends AbstractValueObject implements StringableValueObjectInterfac
         return $this->phone;
     }
 
+    public function getAreaCode(): string
+    {
+        return substr($this->phone, 0, 2);
+    }
+
+    public function getNumber(): string
+    {
+        return substr($this->phone, 2);
+    }
+
     /**
      * @param array<array-key, mixed> $arguments
      */

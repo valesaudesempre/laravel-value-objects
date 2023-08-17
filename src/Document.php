@@ -67,4 +67,14 @@ class Document extends AbstractValueObject implements Castable, FormattableInter
     {
         return new DocumentCast();
     }
+
+    public static function CPF(string $cpf): self
+    {
+        return new self($cpf, DocumentType::CPF());
+    }
+
+    public static function CNPJ(string $cnpj): self
+    {
+        return new self($cnpj, DocumentType::CNPJ());
+    }
 }
