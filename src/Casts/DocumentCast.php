@@ -10,8 +10,8 @@ use ValeSaude\LaravelValueObjects\Enums\DocumentType;
 class DocumentCast implements CastsAttributes
 {
     /**
-     * @param string                                                $value
-     * @param array{document_type: string, document_number: string} $attributes
+     * @param string                                                          $value
+     * @param array{document_type: string|null, document_number: string|null} $attributes
      */
     public function get($model, string $key, $value, array $attributes): ?Document
     {
@@ -33,7 +33,7 @@ class DocumentCast implements CastsAttributes
      * @param Document|null        $value
      * @param array<string, mixed> $attributes
      *
-     * @return array{document_type: string, document_number: string}
+     * @return array{document_type: string|null, document_number: string|null}
      */
     public function set($model, string $key, $value, array $attributes): array
     {
