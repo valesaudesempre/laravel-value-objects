@@ -9,6 +9,7 @@ use InvalidArgumentException;
 use ValeSaude\LaravelValueObjects\Casts\DocumentCast;
 use ValeSaude\LaravelValueObjects\Enums\DocumentType;
 use ValeSaude\LaravelValueObjects\Formatters\Contracts\FormattableInterface;
+use ValeSaude\LaravelValueObjects\Generators\CPFGenerator;
 use ValeSaude\LaravelValueObjects\Validators\CNPJValidator;
 use ValeSaude\LaravelValueObjects\Validators\Contracts\ValidatorInterface;
 use ValeSaude\LaravelValueObjects\Validators\CPFValidator;
@@ -76,5 +77,12 @@ class Document extends AbstractValueObject implements Castable, FormattableInter
     public static function CNPJ(string $cnpj): self
     {
         return new self($cnpj, DocumentType::CNPJ());
+    }
+
+    public static function generateCPF(): self
+    {
+        $generator = Container::getInstance()->get(CPFGenerator::class);
+
+        return new self($generator->generate(), DocumentType::CPF());
     }
 }
