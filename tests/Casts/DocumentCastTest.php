@@ -7,20 +7,20 @@ use ValeSaude\LaravelValueObjects\Tests\Dummies\DummyModel;
 
 beforeEach(fn () => $this->sut = new DocumentCast());
 
-test('get returns Document instance when both document_type and document_number are set', function () {
+test('get returns Document instance when both type and number properties are set', function () {
     // Given
-    $attributes = ['document_type' => 'cpf', 'document_number' => '38253459556'];
+    $attributes = ['property_type' => 'cpf', 'property_number' => '12345678909'];
 
     // When
     $document = $this->sut->get(new DummyModel(), 'property', null, $attributes);
 
     // Then
     expect($document)->toBeInstanceOf(Document::class)
-        ->getNumber()->toEqual('38253459556')
+        ->getNumber()->toEqual('12345678909')
         ->getType()->equals(DocumentType::CPF())->toBeTrue();
 });
 
-test('get returns null when both document_type and document_number are not set', function () {
+test('get returns null when both type and number properties are not set', function () {
     // Given
     $attributes = [];
 
@@ -31,9 +31,9 @@ test('get returns null when both document_type and document_number are not set',
     expect($document)->toBeNull();
 });
 
-test('get returns null when both document_type and document_number keys are present but empty', function () {
+test('get returns null when both type and number property keys are present but empty', function () {
     // Given
-    $attributes = ['document_type' => null, 'document_number' => null];
+    $attributes = ['property_type' => null, 'property_number' => null];
 
     // When
     $document = $this->sut->get(new DummyModel(), 'property', null, $attributes);
@@ -44,22 +44,22 @@ test('get returns null when both document_type and document_number keys are pres
 
 test('get throws InvalidArgumentException when only one of the keys is set', function () {
     // Given
-    $attributes = ['document_number' => '38253459556'];
+    $attributes = ['property_number' => '12345678909'];
 
     // When
     $this->sut->get(new DummyModel(), 'property', null, $attributes);
-})->throws(InvalidArgumentException::class, 'Both document_number and document_type keys must be set or null.');
+})->throws(InvalidArgumentException::class, 'Both property_number and property_type keys must be set or null.');
 
-test('set returns an array containing the document_number and document_type', function () {
+test('set returns an array containing the number and type properties', function () {
     // Given
-    $document = new Document('38253459556', DocumentType::CPF());
+    $document = new Document('12345678909', DocumentType::CPF());
 
     // When
     $attributes = $this->sut->set(new DummyModel(), 'property', $document, []);
 
     // Then
-    expect($attributes)->toHaveKey('document_number', '38253459556')
-        ->toHaveKey('document_type', DocumentType::CPF());
+    expect($attributes)->toHaveKey('property_number', '12345678909')
+        ->toHaveKey('property_type', DocumentType::CPF());
 });
 
 test('set returns an array containing null values when Document is null', function () {
@@ -67,8 +67,8 @@ test('set returns an array containing null values when Document is null', functi
     $attributes = $this->sut->set(new DummyModel(), 'property', null, []);
 
     // Then
-    expect($attributes['document_number'])->toBeNull()
-        ->and($attributes['document_type'])->toBeNull();
+    expect($attributes['property_number'])->toBeNull()
+        ->and($attributes['property_type'])->toBeNull();
 });
 
 test('set throws InvalidArgumentException when given value is not a Document instance', function () {
@@ -76,5 +76,5 @@ test('set throws InvalidArgumentException when given value is not a Document ins
     $document = new stdClass();
 
     // When
-    $attributes = $this->sut->set(new DummyModel(), 'property', $document, []);
+    $this->sut->set(new DummyModel(), 'property', $document, []);
 })->throws(InvalidArgumentException::class, 'The given value is not a Document instance.');
