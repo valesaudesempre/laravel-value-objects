@@ -79,6 +79,22 @@ class Document extends AbstractValueObject implements Castable, FormattableInter
         return new self($cnpj, DocumentType::CNPJ());
     }
 
+    public static function guess(string $document): self
+    {
+        /** @var string $document */
+        $document = preg_replace('/\D/', '', $document);
+
+        if (strlen($document) === 11) {
+            return new self($document, DocumentType::CPF());
+        }
+
+        if (strlen($document) === 14) {
+            return new self($document, DocumentType::CNPJ());
+        }
+
+        throw new InvalidArgumentException('The provided value is not a valid document.');
+    }
+
     public static function generateCPF(): self
     {
         $generator = Container::getInstance()->get(CPFGenerator::class);
